@@ -67,7 +67,7 @@
     "color": "Blanco",
     "duty": "medium",
     "dutyName": "Medium Duty",
-    "price": 95000,
+    "price": 145000,
     "imagesPath": "truck-sales_img/Freightliner-M2106Plus-2026",
     "images": [
       {
@@ -359,7 +359,7 @@
     "color": "Blanco",
     "duty": "heavy",
     "dutyName": "Heavy Duty",
-    "price": 79900,
+    "price": 179900,
     "imagesPath": "truck-sales_img/Freightliner-Cascadia-2024",
     "images": [
       {
@@ -723,7 +723,7 @@
     "color": "Blanco",
     "duty": "medium",
     "dutyName": "Medium Duty",
-    "price": 72000,
+    "price": 142000,
     "imagesPath": "truck-sales_img/Isuzu-NRR-2026",
     "images": [
       {
@@ -799,7 +799,7 @@
     "color": "Blanco",
     "duty": "heavy",
     "dutyName": "Heavy Duty",
-    "price": 62900,
+    "price": 172900,
     "imagesPath": "truck-sales_img/MACK-ANTHEM 64T-2023",
     "images": [
       {
@@ -1047,7 +1047,7 @@
     "color": "Azul",
     "duty": "heavy",
     "dutyName": "Heavy Duty",
-    "price": 84900,
+    "price": 144900,
     "imagesPath": "truck-sales_img/MACK-ANTHEM-2024",
     "images": [
       {
