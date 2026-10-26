@@ -82,7 +82,7 @@ const I18N_EN = {
     "Reliable new and used truck solutions. A wide inventory, competitive prices and expert advice to help you find the ideal vehicle for your fleet.",
   "Explorar Inventario": "Truck Sales",
   "Truck Sales": "Truck Sales",
-  "Solicitar Asesoría": "Request Advice",
+  "Habla con Nosotros": "Talk to Us",
   "Camiones en Stock": "Trucks in Stock",
   "Años de Experiencia": "Years of Experience",
   "Clientes Satisfechos": "Satisfied Customers",
