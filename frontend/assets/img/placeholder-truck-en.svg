@@ -1,0 +1,22 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#F5F7FA" offset="0%"/>
+      <stop stop-color="#E5E7EB" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="12"/>
+  <g transform="translate(400, 220)">
+    <rect x="-180" y="-40" width="260" height="60" rx="8" fill="#9CA3AF"/>
+    <rect x="60" y="-30" width="90" height="40" rx="6" fill="#C7CDD6"/>
+    <rect x="-200" y="20" width="40" height="30" rx="6" fill="#A3A3A3"/>
+    <rect x="80" y="20" width="40" height="30" rx="6" fill="#A3A3A3"/>
+    <circle cx="-160" cy="60" r="20" fill="#1F2937"/>
+    <circle cx="-160" cy="60" r="12" fill="#F5F7FA"/>
+    <circle cx="100" cy="60" r="20" fill="#1F2937"/>
+    <circle cx="100" cy="60" r="12" fill="#F5F7FA"/>
+    <rect x="-140" y="-60" width="120" height="40" rx="6" fill="#0F7BFF" opacity="0.85"/>
+    <text x="0" y="120" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="24" text-anchor="middle" fill="#1F2937" font-weight="600">Truck</text>
+    <text x="0" y="150" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="16" text-anchor="middle" fill="#6B7280">Image not available</text>
+  </g>
+</svg>

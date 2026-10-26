@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Financing Tailored to You - Benefits">
+  <defs>
+    <linearGradient id="bgsales3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f7bff"/>
+      <stop offset="1" stop-color="#073a86"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bgsales3)"/>
+  <g fill="#ffffff" opacity="0.09">
+    <circle cx="1060" cy="90" r="250"/>
+    <circle cx="130" cy="700" r="210"/>
+  </g>
+  <g transform="translate(1000 610)" fill="#ffffff" opacity="0.14" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="150" font-weight="700">
+    <text x="0" y="55">$</text>
+  </g>
+  <text x="600" y="200" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff">Financing Tailored to You</text>
+    <g transform="translate(300 320)">
+      <circle cx="0" cy="0" r="19" fill="#ffffff" opacity="0.22"/>
+      <path d="M-8 0l6 6 11-13" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="45" y="12" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="34" fill="#ffffff">Commercial Truck Loan</text>
+    </g>
+    <g transform="translate(300 385)">
+      <circle cx="0" cy="0" r="19" fill="#ffffff" opacity="0.22"/>
+      <path d="M-8 0l6 6 11-13" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="45" y="12" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="34" fill="#ffffff">Capital Lease</text>
+    </g>
+    <g transform="translate(300 450)">
+      <circle cx="0" cy="0" r="19" fill="#ffffff" opacity="0.22"/>
+      <path d="M-8 0l6 6 11-13" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="45" y="12" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="34" fill="#ffffff">Fair Market Value Lease</text>
+    </g>
+    <g transform="translate(300 515)">
+      <circle cx="0" cy="0" r="19" fill="#ffffff" opacity="0.22"/>
+      <path d="M-8 0l6 6 11-13" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="45" y="12" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="34" fill="#ffffff">Financing through the Manufacturer</text>
+    </g>
+    <g transform="translate(300 580)">
+      <circle cx="0" cy="0" r="19" fill="#ffffff" opacity="0.22"/>
+      <path d="M-8 0l6 6 11-13" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="45" y="12" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="34" fill="#ffffff">And more...</text>
+    </g>
+</svg>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TruckFleet - Repuestos, filtros y componentes para mantener tu flota en movimiento." />
+  <title>TruckFleet | Repuestos</title>
+
+  <!-- Idioma: aplica la preferencia antes de pintar para evitar parpadeos -->
+  <script>
+    (function () {
+      var language = "en";
+      try {
+        language = localStorage.getItem("truckfleet-language") || "en";
+      } catch (error) {
+        language = "en";
+      }
+      document.documentElement.lang = language;
+      document.documentElement.classList.add("i18n-pending");
+      window.setTimeout(function () {
+        document.documentElement.classList.remove("i18n-pending");
+      }, 2500);
+    })();
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%230F7BFF' d='M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z'/%3E%3C/svg%3E" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="../../index.html">
+        Truck<span>Fleet</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./truck-sales.html">Venta de Camiones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./truck-rental.html">Renta de Camiones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="./spare-parts.html">Repuestos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html">Contacto</a>
+          </li>
+          <li class="nav-item language-switcher ms-lg-3 mt-2 mt-lg-0">
+            <select id="languageSelect" class="form-select language-select" aria-label="Idioma">
+              <option value="en">ENG</option>
+              <option value="es">SPA</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header page-header--with-icon">
+    <div class="container">
+      <div class="page-header-content">
+        <!-- Icono de engranaje (mismo dibujo que la tarjeta de Venta de Spare Parts del index) -->
+        <svg class="page-header-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false">
+          <path
+            d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z" />
+        </svg>
+        <div>
+          <h1 class="page-title">Repuestos</h1>
+          <p class="page-subtitle">
+            Repuestos, filtros y componentes para mantener tu flota en movimiento.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Spare Parts Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Filtros -->
+        <div class="col-lg-3">
+          <div class="filters-card">
+            <h4 class="filters-title">
+              <i class="bi bi-funnel me-2"></i>Filtros
+            </h4>
+            <form id="sparePartsFilters">
+              <div class="mb-3">
+                <label for="spareSearch" class="form-label">Buscar</label>
+                <input type="text" class="form-control" id="spareSearch" placeholder="Nombre, SKU, marca..." />
+              </div>
+              <div class="mb-3">
+                <label for="spareCategory" class="form-label">Categoría</label>
+                <select class="form-select" id="spareCategory">
+                  <option value="">Todas</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="spareBrand" class="form-label">Marca</label>
+                <select class="form-select" id="spareBrand">
+                  <option value="">Todas</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="spareCondition" class="form-label">Condición</label>
+                <select class="form-select" id="spareCondition">
+                  <option value="">Todos</option>
+                  <option value="new">Nuevo</option>
+                  <option value="oem">OEM</option>
+                  <option value="aftermarket">Aftermarket</option>
+                  <option value="refurbished">Reacondicionado</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="spareAvailability" class="form-label">Disponibilidad</label>
+                <select class="form-select" id="spareAvailability">
+                  <option value="">Todos</option>
+                  <option value="in-stock">En stock</option>
+                  <option value="low-stock">Stock limitado</option>
+                  <option value="special-order">Bajo pedido</option>
+                </select>
+              </div>
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary">
+                  Aplicar Filtros
+                </button>
+                <button type="reset" class="btn btn-outline-secondary">
+                  Limpiar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Listado de Repuestos -->
+        <div class="col-lg-9">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <p class="mb-0 text-secondary fw-medium" id="sparePartsSummary">
+              Mostrando <strong>1-6</strong> de <strong>12</strong> resultados
+            </p>
+            <select class="form-select w-auto" id="sparePartsSort">
+              <option value="relevance">Relevancia</option>
+              <option value="price-low">Precio: Menor a Mayor</option>
+              <option value="price-high">Precio: Mayor a Menor</option>
+              <option value="name">Nombre: A-Z</option>
+              <option value="stock">Disponibilidad: Mayor</option>
+            </select>
+          </div>
+
+          <div class="row g-4" id="sparePartsGrid" data-per-page="6"></div>
+
+          <!-- Paginación de repuestos -->
+          <nav aria-label="Paginación de repuestos" class="mt-5">
+            <ul class="pagination justify-content-center" id="sparePartsPagination">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#" data-page-target="1" aria-current="page">1</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#" data-page-target="2">2</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#" data-page-target="2">Siguiente</a>
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section section-padding">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <h2 class="section-title">¿No Encuentras lo que Buscas?</h2>
+          <p class="section-subtitle">
+            Cuéntanos qué repuesto necesitas y te ayudamos a localizarlo.
+          </p>
+          <a href="./contact.html" class="btn btn-primary btn-lg mt-3">
+            Solicitar Búsqueda
+            <i class="bi bi-search ms-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a class="footer-brand" href="../../index.html">Truck<span>Fleet</span></a>
+          <p class="footer-text">
+            Soluciones profesionales en camiones para empresas de transporte.
+            Calidad, confianza y experiencia en cada venta.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-title">Enlaces Rápidos</h5>
+          <ul class="footer-links">
+            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="./about.html">Nosotros</a></li>
+            <li><a href="./contact.html">Chat With Us</a></li>
+            <li><a href="./contact.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title">Servicios</h5>
+          <ul class="footer-links">
+            <li><a href="./truck-sales.html">Venta de Camiones</a></li>
+            <li><a href="./truck-rental.html">Renta de Camiones</a></li>
+            <li><a href="./spare-parts.html">Spare Parts</a></li>
+            <li><a href="./contact.html">Asesoría para Flotas</a></li>
+            <li><a href="./contact.html">Financiamiento</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title">Contacto</h5>
+          <ul class="footer-links">
+            <li><i class="bi bi-geo-alt me-2"></i> New York, EE. UU.</li>
+            <li><i class="bi bi-telephone me-2"></i> +1 (800) 555-0123</li>
+            <li><i class="bi bi-envelope me-2"></i> info@truckfleet.demo</li>
+            <li><i class="bi bi-clock me-2"></i> Lun - Vie: 8:00 AM - 6:00 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="text-center">
+          <p class="copyright">
+            &copy; <span id="current-year"></span> TruckFleet. Todos los
+            derechos reservados. | Demo Full-Stack
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Idioma compartido -->
+  <script src="../assets/js/i18n.js"></script>
+  <!-- Custom JS -->
+  <script src="../assets/js/main.js"></script>
+  <!-- Repuestos (datos + paginación) -->
+  <script src="../assets/js/spare-parts.js"></script>
+</body>
+
+</html>

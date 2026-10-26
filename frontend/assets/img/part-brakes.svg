@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Brake parts">
+  <defs>
+    <linearGradient id="bgBrakes" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#dc2626"/>
+      <stop offset="1" stop-color="#450a0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bgBrakes)"/>
+  <circle cx="690" cy="70" r="180" fill="#ffffff" opacity="0.07"/>
+  <circle cx="90" cy="440" r="150" fill="#ffffff" opacity="0.05"/>
+  <g transform="translate(400 250)" fill="none" stroke="#ffffff" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+    <circle r="122"/>
+    <circle r="34"/>
+    <circle cx="0" cy="-76" r="12" fill="#ffffff" stroke="none"/>
+    <circle cx="66" cy="-38" r="12" fill="#ffffff" stroke="none"/>
+    <circle cx="66" cy="38" r="12" fill="#ffffff" stroke="none"/>
+    <circle cx="0" cy="76" r="12" fill="#ffffff" stroke="none"/>
+    <circle cx="-66" cy="38" r="12" fill="#ffffff" stroke="none"/>
+    <circle cx="-66" cy="-38" r="12" fill="#ffffff" stroke="none"/>
+    <rect x="106" y="-72" width="58" height="144" rx="18" fill="#ffffff" opacity="0.9"/>
+  </g>
+</svg>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="TruckFleet - Demo de sitio web para camiones. Inventario, venta y soluciones para flotas." />
+  <meta name="keywords" content="camiones, trucks, tractocamiones, inventario camiones, venta camiones" />
+  <meta name="author" content="TruckFleet Demo" />
+  <title>TruckFleet | Inicio</title>
+
+  <!-- Idioma: aplica la preferencia antes de pintar para evitar parpadeos -->
+  <script>
+    (function () {
+      var language = "en";
+      try {
+        language = localStorage.getItem("truckfleet-language") || "en";
+      } catch (error) {
+        language = "en";
+      }
+      document.documentElement.lang = language;
+      document.documentElement.classList.add("i18n-pending");
+      window.setTimeout(function () {
+        document.documentElement.classList.remove("i18n-pending");
+      }, 2500);
+    })();
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%230F7BFF' d='M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z'/%3E%3C/svg%3E" />
+
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./frontend/assets/css/styles.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html">
+        Truck<span>Fleet</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="./index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./frontend/pages/about.html">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./frontend/pages/truck-sales.html">Venta de Camiones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./frontend/pages/truck-rental.html">Renta de Camiones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./frontend/pages/spare-parts.html">Repuestos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./frontend/pages/contact.html">Contacto</a>
+          </li>
+          <li class="nav-item language-switcher ms-lg-3 mt-2 mt-lg-0">
+            <select id="languageSelect" class="form-select language-select" aria-label="Idioma">
+              <option value="en">ENG</option>
+              <option value="es">SPA</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <h1 class="hero-title">
+            Camiones de Calidad para Impulsar tu Negocio
+          </h1>
+          <p class="hero-subtitle">
+            Soluciones confiables en camiones nuevos y usados. Amplio
+            inventario, precios competitivos y asesoría especializada para
+            ayudarte a encontrar el vehículo ideal para tu flota.
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <div class="hero-image-wrapper">
+            <img src="./frontend/assets/img/main_demo_webp_truck_image.webp" alt="Camión semi-remolque profesional" class="hero-image img-fluid"
+              loading="lazy" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 mt-4">
+          <div class="hero-buttons hero-buttons-row">
+            <a href="./frontend/pages/truck-sales.html" class="btn btn-primary btn-lg">
+              Camiones en Stock
+              <i class="bi bi-truck ms-2"></i>
+            </a>
+            <a href="./frontend/pages/contact.html" class="btn btn-outline-primary btn-lg">
+              Solicitar Asesoría
+              <i class="bi bi-chat-dots ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">¿Por Qué Elegir TruckFleet?</h2>
+        <p class="section-subtitle">
+          Nos enfocamos en ofrecer la mejor experiencia de compra, con
+          transparencia, calidad y soporte post-venta.
+        </p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-truck"></i>
+            </div>
+            <h4 class="feature-title">Amplio Inventario</h4>
+            <p class="feature-text">
+              Gran variedad de camiones nuevos y usados para cubrir cualquier
+              necesidad de transporte.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-currency-dollar"></i>
+            </div>
+            <h4 class="feature-title">Precios Competitivos</h4>
+            <p class="feature-text">
+              Ofrecemos tarifas justas y opciones flexibles para ajustarnos a
+              tu presupuesto.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h4 class="feature-title">Calidad Garantizada</h4>
+            <p class="feature-text">
+              Cada unidad es revisada para asegurar su estado óptimo antes de
+              la entrega.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-headset"></i>
+            </div>
+            <h4 class="feature-title">Asesoría Especializada</h4>
+            <p class="feature-text">
+              Nuestro equipo te guía en cada paso para encontrar el camión
+              perfecto para tu operación.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brands Marquee Section -->
+  <section class="section-padding-sm brand-marquee-section">
+    <div class="container">
+      <p class="text-center text-secondary fw-semibold mb-4">
+        Marcas que representamos y confían en TruckFleet
+      </p>
+      <div class="brand-marquee">
+        <div class="brand-marquee-track">
+          <img src="./frontend/assets/logos/Volvo.png" alt="Volvo" loading="lazy" />
+          <img src="./frontend/assets/logos/Peterbilt.png" alt="Peterbilt" loading="lazy" />
+          <img src="./frontend/assets/logos/mercedes-benz_truck_logo.jpg" alt="Mercedes-Benz Trucks" loading="lazy" />
+          <img src="./frontend/assets/logos/MACK_LOGO.png" alt="Mack" loading="lazy" />
+          <img src="./frontend/assets/logos/kenworth_Logo.svg" alt="Kenworth" loading="lazy" />
+          <img src="./frontend/assets/logos/IVECO_LOG.png" alt="Iveco" loading="lazy" />
+          <img src="./frontend/assets/logos/Freightliner_Logo.svg" alt="Freightliner" loading="lazy" />
+          <!-- Duplicado para loop infinito -->
+          <img src="./frontend/assets/logos/volvo.png" alt="Volvo" loading="lazy" aria-hidden="true" />
+          <img src="./frontend/assets/logos/Peterbilt.png" alt="Peterbilt" loading="lazy" aria-hidden="true" />
+          <img src="./frontend/assets/logos/mercedes-benz_truck_logo.jpg" alt="Mercedes-Benz Trucks" loading="lazy" aria-hidden="true" />
+          <img src="./frontend/assets/logos/MACK_LOGO.png" alt="Mack" loading="lazy" aria-hidden="true" />
+          <img src="./frontend/assets/logos/kenworth_Logo.svg" alt="Kenworth" loading="lazy" aria-hidden="true" />
+          <img src="./frontend/assets/logos/IVECO_LOG.png" alt="Iveco" loading="lazy" aria-hidden="true" />
+          <img src="./frontend/assets/logos/Freightliner_Logo.svg" alt="Freightliner" loading="lazy" aria-hidden="true" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section-padding section-bg-light">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <p class="section-subtitle">
+          Compra, renta y refacciones para mantener tu flota siempre en marcha.
+        </p>
+      </div>
+      <div class="row g-4">
+        <!-- Service Card 1: Venta de Camiones -->
+        <div class="col-md-6 col-lg-4">
+          <div class="truck-card service-card">
+            <div class="truck-carousel" data-carousel>
+              <div class="truck-carousel-images">
+                <div class="truck-carousel-item active" data-desc="Diferentes Opciones de Compra en Camiones">
+                  <img src="./frontend/assets/img/service-sales-1-en.svg"
+                    data-src-en="./frontend/assets/img/service-sales-1-en.svg"
+                    data-src-es="./frontend/assets/img/service-sales-1.svg"
+                    alt="Diferentes Opciones de Compra en Camiones" class="truck-card-img" loading="lazy" />
+                </div>
+                <div class="truck-carousel-item" data-desc="Las Mejores Marcas del Mercado">
+                  <img src="./frontend/assets/img/service-sales-2-en.svg"
+                    data-src-en="./frontend/assets/img/service-sales-2-en.svg"
+                    data-src-es="./frontend/assets/img/service-sales-2.svg"
+                    alt="Las Mejores Marcas del Mercado" class="truck-card-img" loading="lazy" />
+                </div>
+                <div class="truck-carousel-item" data-desc="Diferentes Opciones de Financiamiento">
+                  <img src="./frontend/assets/img/service-sales-3-en.svg"
+                    data-src-en="./frontend/assets/img/service-sales-3-en.svg"
+                    data-src-es="./frontend/assets/img/service-sales-3.svg"
+                    alt="Financiamiento a tu Medida" class="truck-card-img" loading="lazy" />
+                </div>
+                <div class="truck-carousel-item" data-desc="Diferentes Opciones de Garantía y Soporte">
+                  <img src="./frontend/assets/img/service-sales-4-en.svg"
+                    data-src-en="./frontend/assets/img/service-sales-4-en.svg"
+                    data-src-es="./frontend/assets/img/service-sales-4.svg"
+                    alt="Garantía y Respaldo" class="truck-card-img" loading="lazy" />
+                </div>
+              </div>
+              <button class="truck-carousel-arrow truck-carousel-prev" data-carousel-prev aria-label="Anterior imagen">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button class="truck-carousel-arrow truck-carousel-next" data-carousel-next aria-label="Siguiente imagen">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
+            <div class="truck-carousel-desc" data-carousel-desc>Diferentes Opciones de Compra en Camiones</div>
+            <div class="truck-card-body service-card-body">
+              <span class="service-card-kicker"><i class="bi bi-truck"></i> Venta</span>
+              <h5 class="truck-card-title">Venta de Camiones y Trailers</h5>
+              <p class="service-card-desc">
+                Encuentra camiones nuevos y usados de las principales marcas, carga pesada, carga media y carga ligera con opciones de financiamiento y
+                garantía.
+              </p>
+              <ul class="service-card-features">
+                <li><i class="bi bi-check-circle-fill"></i> Unidades nuevas y usadas</li>
+                <li><i class="bi bi-check-circle-fill"></i> Marcas Reconocidas</li>
+                <li><i class="bi bi-check-circle-fill"></i> Financiamiento a tu Medida</li>
+                <li><i class="bi bi-check-circle-fill"></i> Garantía y Soporte en Unidades</li>
+              </ul>
+            </div>
+            <div class="truck-card-footer">
+              <a href="./frontend/pages/truck-sales.html" class="btn btn-primary w-100">
+                Ver Inventario
+                <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 2: Renta de Trucks -->
+        <div class="col-md-6 col-lg-4">
+          <div class="truck-card service-card">
+            <div class="truck-carousel" data-carousel>
+              <div class="truck-carousel-images">
+                <div class="truck-carousel-item active" data-desc="Amplia Flota que se ajusta a tu necesidad">
+                  <img src="./frontend/assets/img/service-rental-1-en.svg"
+                    data-src-en="./frontend/assets/img/service-rental-1-en.svg"
+                    data-src-es="./frontend/assets/img/service-rental-1.svg"
+                    alt="Renta de Camiones - Flota disponible" class="truck-card-img" loading="lazy" />
+                </div>
+                <div class="truck-carousel-item" data-desc="Planes ajustados a su necesidad">
+                  <img src="./frontend/assets/img/service-rental-2-en.svg"
+                    data-src-en="./frontend/assets/img/service-rental-2-en.svg"
+                    data-src-es="./frontend/assets/img/service-rental-2.svg"
+                    alt="Planes ajustados a su necesidad" class="truck-card-img" loading="lazy" />
+                </div>
+                <div class="truck-carousel-item" data-desc="Continuidad Operativa sin Interrupciones">
+                  <img src="./frontend/assets/img/service-rental-3-en.svg"
+                    data-src-en="./frontend/assets/img/service-rental-3-en.svg"
+                    data-src-es="./frontend/assets/img/service-rental-3.svg"
+                    alt="Continuidad Operativa" class="truck-card-img" loading="lazy" />
+                </div>
+                <div class="truck-carousel-item" data-desc="Tecnología de vanguardia">
+                  <img src="./frontend/assets/img/service-rental-4-en.svg"
+                    data-src-en="./frontend/assets/img/service-rental-4-en.svg"
+                    data-src-es="./frontend/assets/img/service-rental-4.svg"
+                    alt="Tecnología e Inteligencia de Datos" class="truck-card-img" loading="lazy" />
+                </div>
+              </div>
+              <button class="truck-carousel-arrow truck-carousel-prev" data-carousel-prev aria-label="Anterior imagen">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button class="truck-carousel-arrow truck-carousel-next" data-carousel-next aria-label="Siguiente imagen">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
+            <div class="truck-carousel-desc" data-carousel-desc>Renta de Camiones - Flota disponible</div>
+            <div class="truck-card-body service-card-body">
+              <span class="service-card-kicker"><i class="bi bi-key"></i> Renta</span>
+              <h5 class="truck-card-title">Renta de Camiones</h5>
+              <p class="service-card-desc">
+                Renta camiones por día, semana, mes o incluso mas tiempo, mutiples opciones de camiones y trailers disponibles, y cubre tu operación con o sin una inversión inicial.
+              </p>
+              <ul class="service-card-features">
+                <li><i class="bi bi-check-circle-fill"></i> Amplia Flota lista para operar</li>
+                <li><i class="bi bi-check-circle-fill"></i> Planes Flexibles</li>
+                <li><i class="bi bi-check-circle-fill"></i> Continuidad Operativa Garantizada</li>
+                <li><i class="bi bi-check-circle-fill"></i> Tecnología e Inteligencia de Datos</li>
+              </ul>
+            </div>
+            <div class="truck-card-footer">
+              <a href="./frontend/pages/truck-rental.html" class="btn btn-primary w-100">
+                Ver Información
+                <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 3: Venta de Spare Parts -->
+        <div class="col-md-6 col-lg-4">
+          <div class="truck-card service-card">
+            <div class="truck-carousel" data-carousel>
+              <div class="truck-carousel-images">
+                <div class="truck-carousel-item active" data-desc="Asesoria Tecnica especializada en repuestos">
+                  <img src="./frontend/assets/img/service-parts-1-en.svg"
+                    data-src-en="./frontend/assets/img/service-parts-1-en.svg"
+                    data-src-es="./frontend/assets/img/service-parts-1.svg"
+                    alt="Venta de Repuestos - Refacciones originales" class="truck-card-img" loading="lazy" />
+                </div>
+                <div class="truck-carousel-item" data-desc="Repuestos Originales de Marcas Reconocidas">
+                  <img src="./frontend/assets/img/service-parts-2-en.svg"
+                    data-src-en="./frontend/assets/img/service-parts-2-en.svg"
+                    data-src-es="./frontend/assets/img/service-parts-2.svg"
+                    alt="Amplio Stock de Repuestos originales" class="truck-card-img" loading="lazy" />
+                </div>
+                <div class="truck-carousel-item" data-desc="Repuestos Homologados (Calidad OEM)">
+                  <img src="./frontend/assets/img/service-parts-3-en.svg"
+                    data-src-en="./frontend/assets/img/service-parts-3-en.svg"
+                    data-src-es="./frontend/assets/img/service-parts-3.svg"
+                    alt="Amplio Stock de Repuestos genéricos" class="truck-card-img" loading="lazy" />
+                </div>
+                <div class="truck-carousel-item" data-desc="Diferentes Opciones de Garantía y Respaldo">
+                  <img src="./frontend/assets/img/service-parts-4-en.svg"
+                    data-src-en="./frontend/assets/img/service-parts-4-en.svg"
+                    data-src-es="./frontend/assets/img/service-parts-4.svg"
+                    alt="Garantía y Respaldo en Repuestos" class="truck-card-img" loading="lazy" />
+                </div>
+              </div>
+              <button class="truck-carousel-arrow truck-carousel-prev" data-carousel-prev aria-label="Anterior imagen">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button class="truck-carousel-arrow truck-carousel-next" data-carousel-next aria-label="Siguiente imagen">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
+            <div class="truck-carousel-desc" data-carousel-desc>Venta de Repuestos - Refacciones originales</div>
+            <div class="truck-card-body service-card-body">
+              <span class="service-card-kicker"><i class="bi bi-gear"></i> Repuestos</span>
+              <h5 class="truck-card-title">Venta de Repuestos</h5>
+              <p class="service-card-desc">
+                Amplio Inventario de Refacciones y repuestos originales para mantener el rendimiento de tu flota, con asesoria tecnica y garantia
+              </p>
+              <ul class="service-card-features">
+                <li><i class="bi bi-check-circle-fill"></i> Asesoría Técnica</li>
+                <li><i class="bi bi-check-circle-fill"></i> Amplio Stock de Repuestos originales</li>
+                <li><i class="bi bi-check-circle-fill"></i> Amplio Stock de Repuestos Homologados</li>
+                <li><i class="bi bi-check-circle-fill"></i> Garantía y Soporte en Repuestos</li>
+              </ul>
+            </div>
+            <div class="truck-card-footer">
+              <a href="./frontend/pages/spare-parts.html" class="btn btn-primary w-100">
+                Ver Repuestos
+                <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <div class="row text-center g-4">
+          <div class="col-md-3 col-6">
+            <h2 class="display-5 fw-bold text-primary-custom mb-2" data-count="500" data-suffix="+">500+</h2>
+            <p class="text-secondary fw-semibold mb-0">Camiones en Stock</p>
+          </div>
+          <div class="col-md-3 col-6">
+            <h2 class="display-5 fw-bold text-primary-custom mb-2" data-count="15" data-suffix="+">15+</h2>
+            <p class="text-secondary fw-semibold mb-0">Años de Experiencia</p>
+          </div>
+          <div class="col-md-3 col-6">
+            <h2 class="display-5 fw-bold text-primary-custom mb-2" data-count="98" data-suffix="%">98%</h2>
+            <p class="text-secondary fw-semibold mb-0">Clientes Satisfechos</p>
+          </div>
+          <div class="col-md-3 col-6">
+            <h2 class="display-5 fw-bold text-primary-custom mb-2" data-count="24" data-suffix="/7">24/7</h2>
+            <p class="text-secondary fw-semibold mb-0">Soporte y Asesoría</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section section-padding">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <h2 class="section-title">
+            ¿Listo para Encontrar tu Próximo Camión?
+          </h2>
+          <p class="section-subtitle">
+            Nuestro equipo está listo para ayudarte. Solicita asesoría gratuita
+            y encuentra la unidad que mejor se adapta a tu operación.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+            <a href="./frontend/pages/contact.html" class="btn btn-primary btn-lg">
+              Contactar Ahora
+              <i class="bi bi-envelope ms-2"></i>
+            </a>
+            <!-- Chat en vivo: aún no implementado; el botón es clicable pero no ejecuta acción -->
+            <button type="button" class="btn btn-outline-light btn-lg"
+              title="Chat en vivo disponible próximamente">
+              Chatea con Nosotros
+              <i class="bi bi-chat-dots-fill ms-2"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a class="footer-brand" href="./index.html">Truck<span>Fleet</span></a>
+          <p class="footer-text">
+            Soluciones profesionales en camiones para empresas de transporte.
+            Calidad, confianza y experiencia en cada venta.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter/X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-title">Enlaces Rápidos</h5>
+          <ul class="footer-links">
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./frontend/pages/about.html">Nosotros</a></li>
+            <li><a href="./frontend/pages/contact.html">Chat With Us</a></li>
+            <li><a href="./frontend/pages/contact.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title">Servicios</h5>
+          <ul class="footer-links">
+            <li><a href="./frontend/pages/truck-sales.html">Venta de Camiones</a></li>
+            <li><a href="./frontend/pages/truck-rental.html">Renta de Camiones</a></li>
+            <li><a href="./frontend/pages/spare-parts.html">Spare Parts</a></li>
+            <li><a href="./frontend/pages/contact.html">Asesoría para Flotas</a></li>
+            <li><a href="./frontend/pages/contact.html">Financiamiento</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title">Contacto</h5>
+          <ul class="footer-links">
+            <li>
+              <i class="bi bi-geo-alt me-2"></i> New York, EE. UU.
+            </li>
+            <li>
+              <i class="bi bi-telephone me-2"></i> +1 (800) 555-0123
+            </li>
+            <li>
+              <i class="bi bi-envelope me-2"></i> info@truckfleet.demo
+            </li>
+            <li>
+              <i class="bi bi-clock me-2"></i> Lun - Vie: 8:00 AM - 6:00 PM
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p class="copyright">
+              &copy; <span id="current-year"></span> TruckFleet. Todos los
+              derechos reservados. | Demo Full-Stack
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Idioma compartido -->
+  <script src="./frontend/assets/js/i18n.js"></script>
+  <!-- Custom JS -->
+  <script src="./frontend/assets/js/main.js"></script>
+</body>
+
+</html>

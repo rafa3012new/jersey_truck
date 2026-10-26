@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Truck Rental - Fleet available by day, week or month">
+  <defs>
+    <linearGradient id="bgrental1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d9488"/>
+      <stop offset="1" stop-color="#064e4a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bgrental1)"/>
+  <g fill="#ffffff" opacity="0.09">
+    <circle cx="1060" cy="90" r="250"/>
+    <circle cx="130" cy="700" r="210"/>
+  </g>
+  <g transform="translate(600 300) scale(13) translate(-8 -8)" fill="#ffffff" opacity="0.96">
+    <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8m4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+  </g>
+  <text x="600" y="160" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="26" font-weight="600" fill="#ffffff" opacity="0.7" letter-spacing="7">RENTAL SERVICE</text>
+  <text x="600" y="565" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="66" font-weight="700" fill="#ffffff">Truck Rental</text>
+  <text x="600" y="622" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="30" fill="#ffffff" opacity="0.82">Fleet available by day, week or month</text>
+</svg>

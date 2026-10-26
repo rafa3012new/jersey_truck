@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Technology and Data Intelligence - Benefits">
+  <defs>
+    <linearGradient id="bgrental4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d9488"/>
+      <stop offset="1" stop-color="#064e4a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bgrental4)"/>
+  <g fill="#ffffff" opacity="0.09">
+    <circle cx="1060" cy="90" r="250"/>
+    <circle cx="130" cy="700" r="210"/>
+  </g>
+  <g transform="translate(1000 610) scale(9) translate(-8 -8)" fill="#ffffff" opacity="0.14">
+    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5A.5.5 0 0 1 5 4m0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5A.5.5 0 0 1 5 7m0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5A.5.5 0 0 1 5 10m0 3a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3A.5.5 0 0 1 5 13"/>
+  </g>
+  <text x="600" y="268" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="60" font-weight="700" fill="#ffffff">Technology and Data Intelligence</text>
+    <g transform="translate(300 360)">
+      <circle cx="0" cy="0" r="19" fill="#ffffff" opacity="0.22"/>
+      <path d="M-8 0l6 6 11-13" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="45" y="12" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="30" fill="#ffffff">Modern and Efficient Fleets</text>
+    </g>
+    <g transform="translate(300 422)">
+      <circle cx="0" cy="0" r="19" fill="#ffffff" opacity="0.22"/>
+      <path d="M-8 0l6 6 11-13" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="45" y="12" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="30" fill="#ffffff">Telemetry and GPS Integration</text>
+    </g>
+    <g transform="translate(300 484)">
+      <circle cx="0" cy="0" r="19" fill="#ffffff" opacity="0.22"/>
+      <path d="M-8 0l6 6 11-13" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="45" y="12" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="30" fill="#ffffff">Digital Management via Portal/App</text>
+    </g>
+    <g transform="translate(300 546)">
+      <circle cx="0" cy="0" r="19" fill="#ffffff" opacity="0.22"/>
+      <path d="M-8 0l6 6 11-13" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="45" y="12" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="30" fill="#ffffff">Digital Fleet Management and Performance Reporting</text>
+    </g>
+    <g transform="translate(300 608)">
+      <circle cx="0" cy="0" r="19" fill="#ffffff" opacity="0.22"/>
+      <path d="M-8 0l6 6 11-13" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="45" y="12" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="30" fill="#ffffff">Y mas...</text>
+    </g>
+</svg>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TruckFleet - Conoce nuestra historia, misión, visión y valores." />
+  <title>TruckFleet | Nosotros</title>
+
+  <!-- Idioma: aplica la preferencia antes de pintar para evitar parpadeos -->
+  <script>
+    (function () {
+      var language = "en";
+      try {
+        language = localStorage.getItem("truckfleet-language") || "en";
+      } catch (error) {
+        language = "en";
+      }
+      document.documentElement.lang = language;
+      document.documentElement.classList.add("i18n-pending");
+      window.setTimeout(function () {
+        document.documentElement.classList.remove("i18n-pending");
+      }, 2500);
+    })();
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%230F7BFF' d='M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z'/%3E%3C/svg%3E" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="../../index.html">
+        Truck<span>Fleet</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="./about.html">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./truck-sales.html">Venta de Camiones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./truck-rental.html">Renta de Camiones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./spare-parts.html">Repuestos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html">Contacto</a>
+          </li>
+          <li class="nav-item language-switcher ms-lg-3 mt-2 mt-lg-0">
+            <select id="languageSelect" class="form-select language-select" aria-label="Idioma">
+              <option value="en">ENG</option>
+              <option value="es">SPA</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header page-header--with-icon">
+    <div class="container">
+      <div class="page-header-content">
+        <!-- Icono de equipo (About Us) -->
+        <svg class="page-header-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false">
+          <path
+            d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4" />
+        </svg>
+        <div>
+          <h1 class="page-title">Sobre Nosotros</h1>
+          <p class="page-subtitle">
+            Impulsando el transporte con confianza, calidad y experiencia desde
+            hace más de 15 años.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <h2 class="section-title mb-3">Nuestra Historia</h2>
+          <p class="lead text-secondary mb-4">
+            En TruckFleet nos especializamos en conectar a empresas de
+            transporte con los camiones ideales para sus operaciones.
+          </p>
+          <p class="mb-3">
+            Nacimos con la misión de simplificar la compra de camiones
+            comerciales, ofreciendo un inventario curado, precios transparentes
+            y asesoría honesta. Nos inspiramos en los mejores referentes del
+            mercado para brindar una experiencia profesional, moderna y
+            confiable.
+          </p>
+          <p class="mb-4">
+            Ya sea que busques un solo camión o ampliar toda tu flota, nuestro
+            equipo trabaja contigo para encontrar la mejor solución adaptada a
+            tus necesidades y presupuesto.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="./truck-sales.html" class="btn btn-primary">
+              Ver Inventario
+              <i class="bi bi-truck ms-2"></i>
+            </a>
+            <a href="./contact.html" class="btn btn-outline-primary">
+              Trabaja con Nosotros
+              <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img src="../assets/img/second_demo_webp_truck_image_1.png" alt="Flota de camiones profesionales" class="about-image img-fluid"
+            loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Vision Values -->
+  <section class="section-padding section-bg-light">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Misión, Visión y Valores</h2>
+        <p class="section-subtitle">
+          Los pilares que guían cada decisión y servicio que ofrecemos.
+        </p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="bi bi-bullseye"></i>
+            </div>
+            <h4 class="value-title">Misión</h4>
+            <p class="value-text">
+              Proporcionar camiones de alta calidad a precios justos,
+              ofreciendo una experiencia de compra transparente, ágil y
+              personalizada para cada cliente.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="bi bi-eye"></i>
+            </div>
+            <h4 class="value-title">Visión</h4>
+            <p class="value-text">
+              Ser la referencia en venta de camiones comerciales, reconocidos
+              por nuestra integridad, servicio al cliente y compromiso con el
+              crecimiento de nuestros clientes.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="bi bi-heart"></i>
+            </div>
+            <h4 class="value-title">Valores</h4>
+            <p class="value-text">
+              Honradez, transparencia, profesionalismo, calidad y enfoque
+              total en satisfacer las necesidades de cada cliente y su
+              operación.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row text-center g-4">
+        <div class="col-md-3 col-6">
+          <h2 class="display-5 fw-bold text-primary-custom mb-2" data-count="500" data-suffix="+">500+</h2>
+          <p class="text-secondary fw-semibold mb-0">Camiones Vendidos</p>
+        </div>
+        <div class="col-md-3 col-6">
+          <h2 class="display-5 fw-bold text-primary-custom mb-2" data-count="15" data-suffix="+">15+</h2>
+          <p class="text-secondary fw-semibold mb-0">Años de Experiencia</p>
+        </div>
+        <div class="col-md-3 col-6">
+          <h2 class="display-5 fw-bold text-primary-custom mb-2" data-count="98" data-suffix="%">98%</h2>
+          <p class="text-secondary fw-semibold mb-0">Satisfacción Cliente</p>
+        </div>
+        <div class="col-md-3 col-6">
+          <h2 class="display-5 fw-bold text-primary-custom mb-2" data-count="24" data-suffix="/7">24/7</h2>
+          <p class="text-secondary fw-semibold mb-0">Soporte y Asesoría</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="section-padding section-bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+        <p class="section-subtitle">
+          Opiniones reales compartidas en Google por empresas que confían en
+          TruckFleet.
+        </p>
+      </div>
+      <div id="reviewsCarousel" class="carousel slide review-carousel" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Opinión 1"></button>
+          <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="1" aria-label="Opinión 2"></button>
+          <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="2" aria-label="Opinión 3"></button>
+          <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="3" aria-label="Opinión 4"></button>
+          <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="4" aria-label="Opinión 5"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="review-card">
+                  <div class="review-stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p class="review-text">
+                    "Excelente servicio. Encontré el camión ideal para mi flota en
+                    pocos días y el equipo me asesoró en todo el proceso de
+                    financiamiento. Muy recomendados."
+                  </p>
+                  <div class="review-author">
+                    <div class="review-avatar">CM</div>
+                    <div>
+                      <h6 class="review-name mb-0">Carlos M.</h6>
+                      <small class="review-source">Google Review</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="review-card">
+                  <div class="review-stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p class="review-text">
+                    "Los repuestos originales que ofrecen son de primera calidad.
+                    El envío fue rápido y la garantía me dio mucha tranquilidad
+                    para mi operación."
+                  </p>
+                  <div class="review-author">
+                    <div class="review-avatar">AR</div>
+                    <div>
+                      <h6 class="review-name mb-0">Ana R.</h6>
+                      <small class="review-source">Google Review</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="review-card">
+                  <div class="review-stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p class="review-text">
+                    "Renté un camión por tres meses y todo funcionó perfecto.
+                    Mantenimiento incluido y soporte 24/7 real. Volveré a rentar
+                    con ellos."
+                  </p>
+                  <div class="review-author">
+                    <div class="review-avatar">JL</div>
+                    <div>
+                      <h6 class="review-name mb-0">Jorge L.</h6>
+                      <small class="review-source">Google Review</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="review-card">
+                  <div class="review-stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p class="review-text">
+                    "Profesionales y transparentes. Los precios son competitivos
+                    y la atención post-venta es excelente. Se nota la
+                    experiencia."
+                  </p>
+                  <div class="review-author">
+                    <div class="review-avatar">MG</div>
+                    <div>
+                      <h6 class="review-name mb-0">María G.</h6>
+                      <small class="review-source">Google Review</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="review-card">
+                  <div class="review-stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p class="review-text">
+                    "La página es muy fácil de usar y el inventario está siempre
+                    actualizado. Recomiendo TruckFleet sin dudar a otros
+                    transportistas."
+                  </p>
+                  <div class="review-author">
+                    <div class="review-avatar">LP</div>
+                    <div>
+                      <h6 class="review-name mb-0">Luis P.</h6>
+                      <small class="review-source">Google Review</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section section-padding">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <h2 class="section-title">¿Listo para Empezar?</h2>
+          <p class="section-subtitle">
+            Descubre por qué cientos de empresas de transporte confían en
+            TruckFleet para sus necesidades de camiones.
+          </p>
+          <a href="./contact.html" class="btn btn-primary btn-lg mt-3">
+            Hablemos Ahora
+            <i class="bi bi-chat-dots ms-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a class="footer-brand" href="../../index.html">Truck<span>Fleet</span></a>
+          <p class="footer-text">
+            Soluciones profesionales en camiones para empresas de transporte.
+            Calidad, confianza y experiencia en cada venta.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-title">Enlaces Rápidos</h5>
+          <ul class="footer-links">
+            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="./about.html">Nosotros</a></li>
+            <li><a href="./contact.html">Chat With Us</a></li>
+            <li><a href="./contact.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title">Servicios</h5>
+          <ul class="footer-links">
+            <li><a href="./truck-sales.html">Venta de Camiones</a></li>
+            <li><a href="./truck-rental.html">Renta de Camiones</a></li>
+            <li><a href="./spare-parts.html">Spare Parts</a></li>
+            <li><a href="./contact.html">Asesoría para Flotas</a></li>
+            <li><a href="./contact.html">Financiamiento</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title">Contacto</h5>
+          <ul class="footer-links">
+            <li><i class="bi bi-geo-alt me-2"></i> New York, EE. UU.</li>
+            <li><i class="bi bi-telephone me-2"></i> +1 (800) 555-0123</li>
+            <li><i class="bi bi-envelope me-2"></i> info@truckfleet.demo</li>
+            <li><i class="bi bi-clock me-2"></i> Lun - Vie: 8:00 AM - 6:00 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="text-center">
+          <p class="copyright">
+            &copy; <span id="current-year"></span> TruckFleet. Todos los
+            derechos reservados. | Demo Full-Stack
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Idioma compartido -->
+  <script src="../assets/js/i18n.js"></script>
+  <!-- Custom JS -->
+  <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
