@@ -45,14 +45,21 @@ function initTruckDetail() {
  * @returns {Object|null} Camión encontrado o null
  */
 function getTruckFromUrl() {
-  if (typeof INVENTORY_TRUCKS === "undefined") return null;
+  const catalog =
+    typeof TRUCK_SALES_DATA !== "undefined" && Array.isArray(TRUCK_SALES_DATA)
+      ? TRUCK_SALES_DATA
+      : typeof INVENTORY_TRUCKS !== "undefined"
+      ? INVENTORY_TRUCKS
+      : null;
+
+  if (!catalog) return null;
 
   const params = new URLSearchParams(window.location.search);
   const id = Number.parseInt(params.get("id"), 10);
 
   if (Number.isNaN(id)) return null;
 
-  return INVENTORY_TRUCKS.find((truck) => truck.id === id) || null;
+  return catalog.find((truck) => truck.id === id) || null;
 }
 
 /* ===================================
@@ -266,7 +273,7 @@ function renderTruckQuickSpecs(truck) {
   const specs = [
     ["bi-calendar3", t("Año"), truck.year],
     ["bi-speedometer2", t("Kilometraje"), formatMileage(truck.mileage)],
-    ["bi-fuel-pump", t("Combustible"), t(truck.fuel)],
+    [truck.fuelIcon || "bi-fuel-pump", t("Combustible"), t(truck.fuel)],
     ["bi-gear", t("Transmisión"), t(truck.transmission)],
     ["bi-truck", t("Tipo"), t(truck.typeName)],
     ["bi-palette", t("Color"), t(getColor(truck))],
@@ -483,12 +490,16 @@ function renderTruckEquipment(truck) {
   const list = document.getElementById("truckEquipment");
   if (!list) return;
 
-  // Rotación determinista según la unidad para variar el equipamiento
-  const offset = truck.id % TRUCK_EQUIPMENT.length;
-  const items = [
-    ...TRUCK_EQUIPMENT.slice(offset),
-    ...TRUCK_EQUIPMENT.slice(0, offset),
-  ].slice(0, 8);
+  let items = [];
+  if (Array.isArray(truck.equipment) && truck.equipment.length) {
+    items = truck.equipment;
+  } else {
+    const offset = truck.id % TRUCK_EQUIPMENT.length;
+    items = [
+      ...TRUCK_EQUIPMENT.slice(offset),
+      ...TRUCK_EQUIPMENT.slice(0, offset),
+    ].slice(0, 8);
+  }
 
   list.innerHTML = items
     .map(
@@ -507,7 +518,14 @@ function renderSimilarTrucks(truck) {
   const section = document.getElementById("truckSimilarSection");
   if (!container) return;
 
-  const similar = INVENTORY_TRUCKS.filter(
+  const catalog =
+    typeof TRUCK_SALES_DATA !== "undefined" && Array.isArray(TRUCK_SALES_DATA)
+      ? TRUCK_SALES_DATA
+      : typeof INVENTORY_TRUCKS !== "undefined"
+      ? INVENTORY_TRUCKS
+      : [];
+
+  const similar = catalog.filter(
     (candidate) => candidate.id !== truck.id
   )
     .sort((a, b) => similarityScore(b, truck) - similarityScore(a, truck))
@@ -616,14 +634,17 @@ function isNaturalGas(truck) {
  * por eso no se antepone `makeName` para evitar duplicados.
  */
 function getFullName(truck) {
+  if (truck.fullName) return truck.fullName;
   return `${truck.year} ${truck.name}`;
 }
 
 function getStockNumber(truck) {
+  if (truck.stockNumber) return truck.stockNumber;
   return `TF-${1000 + truck.id * 37}`;
 }
 
 function getLocation(truck) {
+  if (truck.location) return truck.location;
   const locations = ["Miami, FL", "Houston, TX", "Atlanta, GA", "Phoenix, AZ"];
   return locations[truck.id % locations.length];
 }
@@ -636,6 +657,7 @@ function getColor(truck) {
 }
 
 function getEngine(truck) {
+  if (truck.engine) return truck.engine;
   if (isElectric(truck)) return t("Detroit ePowertrain (eléctrico)");
   if (isNaturalGas(truck)) return "Cummins Westport ISX12N 11.9L";
 
@@ -651,30 +673,35 @@ function getEngine(truck) {
 }
 
 function getPower(truck) {
+  if (truck.power) return truck.power;
   if (isElectric(truck)) return "291 kW (391 hp)";
   if (isNaturalGas(truck)) return "400 hp";
   return truck.type === "sleeper" ? "505 hp" : "450 hp";
 }
 
 function getTorque(truck) {
+  if (truck.torque) return truck.torque;
   if (isElectric(truck)) return "1,800 lb-ft";
   if (isNaturalGas(truck)) return "1,450 lb-ft";
   return truck.type === "sleeper" ? "1,850 lb-ft" : "1,650 lb-ft";
 }
 
 function getGvwr(truck) {
+  if (truck.gvwr) return truck.gvwr;
   if (truck.type === "semi") return "80,000 lb";
   if (truck.type === "sleeper") return "53,000 lb";
   return "35,000 lb";
 }
 
 function getWheelbase(truck) {
+  if (truck.wheelbase) return truck.wheelbase;
   if (truck.type === "semi") return "240 in";
   if (truck.type === "sleeper") return "232 in";
   return "190 in";
 }
 
 function getFuelCapacity(truck) {
+  if (truck.fuelCapacity) return truck.fuelCapacity;
   if (isElectric(truck)) return "438 kWh";
   if (isNaturalGas(truck)) return t("100 gal GNC");
   return "120 gal";

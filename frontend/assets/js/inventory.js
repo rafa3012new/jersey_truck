@@ -8,441 +8,12 @@
  * Catálogo estático de camiones (demo).
  * Cada entrada alimenta una card del grid y los filtros del panel lateral.
  */
-const INVENTORY_TRUCKS = [
-  {
-    id: 1,
-    name: "Freightliner M2 106",
-    make: "freightliner",
-    makeName: "Freightliner",
-    condition: "used",
-    badge: "Usado",
-    badgeClass: "badge-primary",
-    year: 2022,
-    mileage: 425000,
-    fuel: "Diésel",
-    fuelType: "diesel",
-    fuelIcon: "bi-fuel-pump",
-    transmission: "Automático",
-    transmissionType: "automatic",
-    type: "daycab",
-    typeName: "Day Cab",
-    color: "Blanco",
-    duty: "medium",
-    dutyName: "Medium Duty",
-    price: 72500,
-    images: [
-      {
-        src: "../assets/img/jifif_truck_image_1_Freightliner_M2 106 Plus.jfif",
-        desc: "Freightliner M2 106 - Vista Frontal",
-      },
-      {
-        src: "../assets/img/webp_truck_image_1.webp",
-        desc: "Freightliner M2 106 - Vista Lateral",
-      },
-    ],
-  },
-  {
-    id: 2,
-    name: "Kenworth T800",
-    make: "kenworth",
-    makeName: "Kenworth",
-    condition: "used-excellent",
-    badge: "Usado - Excelente",
-    badgeClass: "badge-success",
-    year: 2023,
-    mileage: 215000,
-    fuel: "Diésel",
-    fuelType: "diesel",
-    fuelIcon: "bi-fuel-pump",
-    transmission: "Manual",
-    transmissionType: "manual",
-    type: "daycab",
-    typeName: "Day Cab",
-    color: "Rojo",
-    duty: "heavy",
-    dutyName: "Heavy Duty",
-    price: 92900,
-    images: [
-      {
-        src: "../assets/img/webp_truck_image_2_Kenworth_T800.png",
-        desc: "Kenworth T800 - Vista Frontal",
-      },
-      {
-        src: "../assets/img/webp_truck_image_2.webp",
-        desc: "Kenworth T800 - Vista Lateral",
-      },
-      {
-        src: "../assets/img/webp_truck_image_1.webp",
-        desc: "Kenworth T800 - Vista Trasera",
-      },
-    ],
-  },
-  {
-    id: 3,
-    name: "Mack Granite",
-    make: "mack",
-    makeName: "Mack",
-    condition: "used",
-    badge: "Usado",
-    badgeClass: "badge-primary",
-    year: 2025,
-    mileage: 80000,
-    fuel: "Diésel",
-    fuelType: "diesel",
-    fuelIcon: "bi-fuel-pump",
-    transmission: "Automático",
-    transmissionType: "automatic",
-    type: "daycab",
-    typeName: "Day Cab",
-    color: "Blanco",
-    duty: "heavy",
-    dutyName: "Heavy Duty",
-    price: 92900,
-    images: [
-      {
-        src: "../assets/img/webp_truck_image_1_Mack Granite.webp",
-        desc: "Mack Granite - Vista Frontal",
-      },
-      {
-        src: "../assets/img/webp_truck_image_1.webp",
-        desc: "Mack Granite - Vista Lateral",
-      },
-      {
-        src: "../assets/img/webp_truck_image_3.webp",
-        desc: "Mack Granite - Cabina",
-      },
-    ],
-  },
-  {
-    id: 4,
-    name: "Mack Anthem",
-    make: "mack",
-    makeName: "Mack",
-    condition: "used",
-    badge: "Usado",
-    badgeClass: "badge-primary",
-    year: 2024,
-    mileage: 85000,
-    fuel: "Diésel",
-    fuelType: "diesel",
-    fuelIcon: "bi-fuel-pump",
-    transmission: "Automático",
-    transmissionType: "automatic",
-    type: "sleeper",
-    typeName: "Sleeper",
-    color: "Azul",
-    duty: "heavy",
-    dutyName: "Heavy Duty",
-    price: 84900,
-    images: [
-      {
-        src: "../assets/img/webp_truck_image_2_Mack Anthem.webp",
-        desc: "Mack Anthem - Vista Frontal",
-      },
-      {
-        src: "../assets/img/webp_truck_image_2.webp",
-        desc: "Mack Anthem - Vista Lateral",
-      },
-      {
-        src: "../assets/img/webp_truck_image_1.webp",
-        desc: "Mack Anthem - Cabina",
-      },
-    ],
-  },
-  {
-    id: 5,
-    name: "Mack LR",
-    make: "mack",
-    makeName: "Mack",
-    condition: "used",
-    badge: "Usado",
-    badgeClass: "badge-primary",
-    year: 2025,
-    mileage: 95000,
-    fuel: "Gas Natural",
-    fuelType: "natural-gas",
-    fuelIcon: "bi-fire",
-    transmission: "Manual",
-    transmissionType: "manual",
-    type: "daycab",
-    typeName: "Day Cab",
-    color: "Blanco",
-    duty: "heavy",
-    dutyName: "Heavy Duty",
-    price: 65900,
-    images: [
-      {
-        src: "../assets/img/webp_truck_image_3_Mack LR.webp",
-        desc: "Mack LR - Vista Frontal",
-      },
-      {
-        src: "../assets/img/webp_truck_image_3.webp",
-        desc: "Mack LR - Vista Lateral",
-      },
-      {
-        src: "../assets/img/webp_truck_image_2.webp",
-        desc: "Mack LR - Vista Trasera",
-      },
-    ],
-  },
-  {
-    id: 6,
-    name: "Freightliner eCascadia",
-    make: "freightliner",
-    makeName: "Freightliner",
-    condition: "new",
-    badge: "Nuevo",
-    badgeClass: "badge-success",
-    year: 2026,
-    mileage: 0,
-    fuel: "Eléctrico",
-    fuelType: "electric",
-    fuelIcon: "bi-battery-charging",
-    transmission: "Automático",
-    transmissionType: "automatic",
-    type: "daycab",
-    typeName: "Day Cab",
-    color: "Blanco",
-    duty: "heavy",
-    dutyName: "Heavy Duty",
-    price: 243000,
-    images: [
-      {
-        src: "../assets/img/jifif_truck_image_2_Freightliner eCascadia.jfif",
-        desc: "Freightliner eCascadia - Vista Frontal",
-      },
-      {
-        src: "../assets/img/webp_truck_image_1.webp",
-        desc: "Freightliner eCascadia - Vista Lateral",
-      },
-      {
-        src: "../assets/img/webp_truck_image_3.webp",
-        desc: "Freightliner eCascadia - Vista Trasera",
-      },
-    ],
-  },
-  {
-    id: 7,
-    name: "Peterbilt 579",
-    make: "peterbilt",
-    makeName: "Peterbilt",
-    condition: "used",
-    badge: "Usado",
-    badgeClass: "badge-primary",
-    year: 2021,
-    mileage: 380000,
-    fuel: "Diésel",
-    fuelType: "diesel",
-    fuelIcon: "bi-fuel-pump",
-    transmission: "Manual",
-    transmissionType: "manual",
-    type: "sleeper",
-    typeName: "Sleeper",
-    color: "Negro",
-    duty: "heavy",
-    dutyName: "Heavy Duty",
-    price: 68900,
-    images: [
-      {
-        src: "../assets/img/jpg_truck_image_1.jpg",
-        desc: "Peterbilt 579 - Vista Frontal",
-      },
-      {
-        src: "../assets/img/second_demo_webp_truck_image_1.png",
-        desc: "Peterbilt 579 - Vista Lateral",
-      },
-      {
-        src: "../assets/img/webp_truck_image_1.png",
-        desc: "Peterbilt 579 - Vista Trasera",
-      },
-    ],
-  },
-  {
-    id: 8,
-    name: "Kenworth T680",
-    make: "kenworth",
-    makeName: "Kenworth",
-    condition: "used-excellent",
-    badge: "Usado - Excelente",
-    badgeClass: "badge-success",
-    year: 2024,
-    mileage: 120000,
-    fuel: "Diésel",
-    fuelType: "diesel",
-    fuelIcon: "bi-fuel-pump",
-    transmission: "Automático",
-    transmissionType: "automatic",
-    type: "sleeper",
-    typeName: "Sleeper",
-    color: "Azul",
-    duty: "heavy",
-    dutyName: "Heavy Duty",
-    price: 119500,
-    images: [
-      {
-        src: "../assets/img/webp_truck_image_1_Kenworth_T680.png",
-        desc: "Kenworth T680 - Vista Frontal",
-      },
-      {
-        src: "../assets/img/main_demo_webp_truck_image_2.webp",
-        desc: "Kenworth T680 - Vista Lateral",
-      },
-      {
-        src: "../assets/img/webp_truck_image_2.png",
-        desc: "Kenworth T680 - Cabina",
-      },
-    ],
-  },
-  {
-    id: 9,
-    name: "Volvo VNL 760",
-    make: "volvo",
-    makeName: "Volvo",
-    condition: "used",
-    badge: "Usado",
-    badgeClass: "badge-primary",
-    year: 2022,
-    mileage: 290000,
-    fuel: "Diésel",
-    fuelType: "diesel",
-    fuelIcon: "bi-fuel-pump",
-    transmission: "Automático",
-    transmissionType: "automatic",
-    type: "sleeper",
-    typeName: "Sleeper",
-    color: "Gris",
-    duty: "heavy",
-    dutyName: "Heavy Duty",
-    price: 86400,
-    images: [
-      {
-        src: "../assets/img/jpg_truck_image_2.jpg",
-        desc: "Volvo VNL 760 - Vista Frontal",
-      },
-      {
-        src: "../assets/img/jpg_truck_image_4.jpg",
-        desc: "Volvo VNL 760 - Vista Lateral",
-      },
-      {
-        src: "../assets/img/main_demo_webp_truck_image.webp",
-        desc: "Volvo VNL 760 - Cabina",
-      },
-    ],
-  },
-  {
-    id: 10,
-    name: "Freightliner Cascadia 126",
-    make: "freightliner",
-    makeName: "Freightliner",
-    condition: "used",
-    badge: "Usado",
-    badgeClass: "badge-primary",
-    year: 2021,
-    mileage: 455000,
-    fuel: "Diésel",
-    fuelType: "diesel",
-    fuelIcon: "bi-fuel-pump",
-    transmission: "Manual",
-    transmissionType: "manual",
-    type: "semi",
-    typeName: "Semi Remolque",
-    color: "Plata",
-    duty: "heavy",
-    dutyName: "Heavy Duty",
-    price: 59900,
-    images: [
-      {
-        src: "../assets/img/webp_truck_image_2_Freightliner eCascadia.png",
-        desc: "Freightliner Cascadia 126 - Vista Frontal",
-      },
-      {
-        src: "../assets/img/jpg_truck_image_1.jpg",
-        desc: "Freightliner Cascadia 126 - Vista Lateral",
-      },
-      {
-        src: "../assets/img/jpg_truck_image_2.jpg",
-        desc: "Freightliner Cascadia 126 - Cabina",
-      },
-    ],
-  },
-  {
-    id: 11,
-    name: "Peterbilt 389",
-    make: "peterbilt",
-    makeName: "Peterbilt",
-    condition: "used",
-    badge: "Usado",
-    badgeClass: "badge-primary",
-    year: 2023,
-    mileage: 165000,
-    fuel: "Gas Natural",
-    fuelType: "natural-gas",
-    fuelIcon: "bi-fire",
-    transmission: "Manual",
-    transmissionType: "manual",
-    type: "sleeper",
-    typeName: "Sleeper",
-    color: "Rojo",
-    duty: "heavy",
-    dutyName: "Heavy Duty",
-    price: 98750,
-    images: [
-      {
-        src: "../assets/img/main_demo_webp_truck_image.webp",
-        desc: "Peterbilt 389 - Vista Frontal",
-      },
-      {
-        src: "../assets/img/jpg_truck_image_4.jpg",
-        desc: "Peterbilt 389 - Vista Lateral",
-      },
-      {
-        src: "../assets/img/webp_truck_image_3.webp",
-        desc: "Peterbilt 389 - Vista Trasera",
-      },
-    ],
-  },
-  {
-    id: 12,
-    name: "Mack Anthem",
-    make: "mack",
-    makeName: "Mack",
-    condition: "new",
-    badge: "Nuevo",
-    badgeClass: "badge-success",
-    year: 2026,
-    mileage: 0,
-    fuel: "Diésel",
-    fuelType: "diesel",
-    fuelIcon: "bi-fuel-pump",
-    transmission: "Automático",
-    transmissionType: "automatic",
-    type: "daycab",
-    typeName: "Sleeper",
-    //typeName: "64-Inch Mid-Roof Sleeper",
-    color: "Negro",
-    duty: "heavy",
-    dutyName: "Heavy Duty",
-    price: 208000,
-    images: [
-      {
-        src: "../assets/img/webp_truck_image_1_Mack Anthem_64inch_Mid-Roof Sleeper.webp",
-        desc: "Mack Anthem - Diesel - Negro - Vista Frontal Catalogo",
-      },
-      {
-        src: "../assets/img/webp_truck_image_1_Mack Anthem_64inch_Mid-Roof Sleeper_lateral.webp",
-        desc: "Mack Anthem - Diesel - Negro - Vista Lateral Catalogo",
-      },
-      {
-        src: "../assets/img/webp_truck_image_1_Mack Anthem_64inch_Mid-Roof Sleeper_real_front.jpg",
-        desc: "Mack Anthem - Diesel - Negro - Vista Frontal Real",
-      },
-      {
-        src: "../assets/img/webp_truck_image_1_Mack Anthem_64inch_Mid-Roof Sleeper_real_back.jpg",
-        desc: "Mack Anthem - Diesel - Negro - Vista Trasera Real",
-      },
-    ],
-  },
-];
+// Catálogo alimentado desde frontend/assets/js/truck-sales-data.js, que envuelve
+// frontend/assets/truck-sales_img/Truck_Desc.json (sin backend ni servidor).
+const INVENTORY_TRUCKS =
+  (typeof TRUCK_SALES_DATA !== "undefined" && Array.isArray(TRUCK_SALES_DATA))
+    ? TRUCK_SALES_DATA
+    : [];
 
 /**
  * Estado de la vista de inventario (página actual, orden y filtros).
@@ -467,6 +38,7 @@ document.addEventListener("DOMContentLoaded", initInventory);
 // Vuelve a pintar el listado cuando el usuario cambia de idioma.
 document.addEventListener("truckfleet:languagechange", () => {
   if (document.getElementById("trucksGrid")) {
+    populateMakeFilter();
     populateYearFilter();
     renderInventory();
   }
@@ -483,6 +55,7 @@ function initInventory() {
 
   inventoryState.perPage = parseInt(grid.dataset.perPage, 10) || 6;
 
+  populateMakeFilter();
   populateYearFilter();
   bindInventoryEvents();
   renderInventory();
@@ -510,6 +83,32 @@ function populateYearFilter() {
 
   yearSelect.value = years.some((year) => String(year) === selectedYear)
     ? selectedYear
+    : "";
+}
+
+/**
+ * Rellena el filtro de marca con todas las marcas presentes en el catálogo
+ * (alimentado desde el JSON), conservando la selección actual si sigue existiendo.
+ */
+function populateMakeFilter() {
+  const makeSelect = document.getElementById("make");
+  if (!makeSelect) return;
+
+  const selectedMake = makeSelect.value;
+  const makes = [...new Map(
+    INVENTORY_TRUCKS.map((truck) => [truck.make, truck.makeName])
+  ).entries()];
+
+  makeSelect.innerHTML = [
+    `<option value="">${escapeHtml(t("Todas"))}</option>`,
+    ...makes.map(
+      ([make, makeName]) =>
+        `<option value="${escapeHtml(make)}">${escapeHtml(makeName)}</option>`
+    ),
+  ].join("");
+
+  makeSelect.value = makes.some(([make]) => make === selectedMake)
+    ? selectedMake
     : "";
 }
 
