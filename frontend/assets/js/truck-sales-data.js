@@ -705,122 +705,58 @@
   },
   {
     "id": 10,
-    "name": "Isuzu NPR HD",
+    "name": "Isuzu NRR",
     "make": "isuzu",
     "makeName": "Isuzu",
-    "condition": "used",
-    "badge": "Usado",
+    "condition": "new",
+    "badge": "Nuevo",
     "badgeClass": "badge-primary",
-    "year": 2023,
-    "mileage": 85000,
-    "fuel": "DiÃ©sel",
-    "fuelType": "diesel",
-    "fuelIcon": "bi-fuel-pump",
-    "transmission": "AutomÃ¡tico",
+    "year": 2026,
+    "mileage": 0,
+    "fuel": "Natural Gas",
+    "fuelType": "natural gas",
+    "fuelIcon": "bi-fire",
+    "transmission": "Automatico",
     "transmissionType": "automatic",
     "type": "daycab",
     "typeName": "Day Cab",
     "color": "Blanco",
-    "duty": "light",
-    "dutyName": "Light Duty",
-    "price": 52000,
-    "imagesPath": "truck-sales_img/Isuzu-NPR HD-2023",
+    "duty": "medium",
+    "dutyName": "Medium Duty",
+    "price": 72000,
+    "imagesPath": "truck-sales_img/Isuzu-NRR-2026",
     "images": [
       {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-tru.jfif",
+        "src": "../assets/truck-sales_img/Isuzu-NRR-2026/1.webp",
+        "desc": "Isuzu NRR - Vista Diagonal Frontal Piloto"
+      },
+      {
+        "src": "../assets/truck-sales_img/Isuzu-NRR-2026/2.webp",
         "desc": "Isuzu NPR HD - Vista Frontal"
       },
       {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-10.jfif",
-        "desc": "Isuzu NPR HD - Vista Lateral"
+        "src": "../assets/truck-sales_img/Isuzu-NRR-2026/3.webp",
+        "desc": "Isuzu NPR HD - Vista Diagonal Frontal Copiloto"
       },
       {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-11.jfif",
+        "src": "../assets/truck-sales_img/Isuzu-NRR-2026/4.webp",
         "desc": "Isuzu NPR HD - Vista Trasera"
       },
       {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-12.jfif",
-        "desc": "Isuzu NPR HD - Vista Cabina"
+        "src": "../assets/truck-sales_img/Isuzu-NRR-2026/5.webp",
+        "desc": "Isuzu NPR HD - Vista Diagonal Trasera Copiloto"
       },
       {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-13.jfif",
-        "desc": "Isuzu NPR HD - Detalle"
+        "src": "../assets/truck-sales_img/Isuzu-NRR-2026/6.webp",
+        "desc": "Isuzu NPR HD - Vista Volante"
       },
       {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-14.jfif",
-        "desc": "Isuzu NPR HD - Vista General"
+        "src": "../assets/truck-sales_img/Isuzu-NRR-2026/7.webp",
+        "desc": "Isuzu NPR HD - Vista Diagonal Trasera Piloto"
       },
       {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-15.jfif",
-        "desc": "Isuzu NPR HD - Vista Frontal"
-      },
-      {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-16.jfif",
-        "desc": "Isuzu NPR HD - Vista Lateral"
-      },
-      {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-17.jfif",
-        "desc": "Isuzu NPR HD - Vista Trasera"
-      },
-      {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-18.jfif",
-        "desc": "Isuzu NPR HD - Vista Cabina"
-      },
-      {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-19.jfif",
-        "desc": "Isuzu NPR HD - Detalle"
-      },
-      {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-2.jfif",
-        "desc": "Isuzu NPR HD - Vista General"
-      },
-      {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-20.jfif",
-        "desc": "Isuzu NPR HD - Vista Frontal"
-      },
-      {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-21.jfif",
-        "desc": "Isuzu NPR HD - Vista Lateral"
-      },
-      {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-22.jfif",
-        "desc": "Isuzu NPR HD - Vista Trasera"
-      },
-      {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-23.jfif",
-        "desc": "Isuzu NPR HD - Vista Cabina"
-      },
-      {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-24.jfif",
-        "desc": "Isuzu NPR HD - Detalle"
-      },
-      {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-3.jfif",
-        "desc": "Isuzu NPR HD - Vista General"
-      },
-      {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-4.jfif",
-        "desc": "Isuzu NPR HD - Vista Frontal"
-      },
-      {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-5.jfif",
-        "desc": "Isuzu NPR HD - Vista Lateral"
-      },
-      {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-6.jfif",
-        "desc": "Isuzu NPR HD - Vista Trasera"
-      },
-      {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-7.jfif",
-        "desc": "Isuzu NPR HD - Vista Cabina"
-      },
-      {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-8.jfif",
-        "desc": "Isuzu NPR HD - Detalle"
-      },
-      {
-        "src": "../assets/truck-sales_img/Isuzu-NPR HD-2023/2023-isuzu-npr-hd-regular-morgan-box-truck-9.jfif",
-        "desc": "Isuzu NPR HD - Vista General"
+        "src": "../assets/truck-sales_img/Isuzu-NRR-2026/8.webp",
+        "desc": "Isuzu NPR HD - Vista Palanca de Cambios"
       }
     ],
     "engine": "Isuzu 4HK1-TC 5.2L",
@@ -831,15 +767,15 @@
     "fuelCapacity": "30 gal",
     "location": "Houston, TX",
     "stockNumber": "TF-1370",
-    "fullName": "2023 Isuzu NPR HD",
+    "fullName": "2026 Isuzu NRR",
     "equipment": [
       "Control de estabilidad",
       "Tanque de aluminio",
       "Aire acondicionado",
       "Frenos ABS",
       "Control de crucero",
-      "Espejos elÃ©ctricos",
-      "Asiento del conductor neumÃ¡tico",
+      "Espejos electricos",
+      "Asiento del conductor neumatico",
       "Bloqueo de diferencial"
     ]
   },
@@ -1101,10 +1037,10 @@
     "badgeClass": "badge-primary",
     "year": 2024,
     "mileage": 75000,
-    "fuel": "DiÃ©sel",
+    "fuel": "Diesel",
     "fuelType": "diesel",
     "fuelIcon": "bi-fuel-pump",
-    "transmission": "AutomÃ¡tico",
+    "transmission": "Automatico",
     "transmissionType": "automatic",
     "type": "sleeper",
     "typeName": "Sleeper",
@@ -1115,12 +1051,48 @@
     "imagesPath": "truck-sales_img/MACK-ANTHEM-2024",
     "images": [
       {
-        "src": "../assets/truck-sales_img/MACK-ANTHEM-2024/webp_truck_image_1_Mack Anthem_64inch_Mid-Roof Sleeper_real_back.jpg",
+        "src": "../assets/truck-sales_img/MACK-ANTHEM-2024/1.jpg",
+        "desc": "Mack Anthem - Vista Diagonal Frontal Piloto"
+      },
+      {
+        "src": "../assets/truck-sales_img/MACK-ANTHEM-2024/2.jpg",
         "desc": "Mack Anthem - Vista Frontal"
       },
       {
-        "src": "../assets/truck-sales_img/MACK-ANTHEM-2024/webp_truck_image_1_Mack Anthem_64inch_Mid-Roof Sleeper_real_front.jpg",
-        "desc": "Mack Anthem - Vista Lateral"
+        "src": "../assets/truck-sales_img/MACK-ANTHEM-2024/3.jpg",
+        "desc": "Mack Anthem - Vista Diagonal Frontal Copiloto"
+      },
+      {
+        "src": "../assets/truck-sales_img/MACK-ANTHEM-2024/4.jpg",
+        "desc": "Mack Anthem - Vista Lateral Copiloto"
+      },
+      {
+        "src": "../assets/truck-sales_img/MACK-ANTHEM-2024/5.jpg",
+        "desc": "Mack Anthem - Vista Diagonal Trasera Copiloto"
+      },
+      {
+        "src": "../assets/truck-sales_img/MACK-ANTHEM-2024/6.jpg",
+        "desc": "Mack Anthem - Vista Trasera"
+      },
+      {
+        "src": "../assets/truck-sales_img/MACK-ANTHEM-2024/7.jpg",
+        "desc": "Mack Anthem - Vista Diagonal Trasera Piloto"
+      },
+      {
+        "src": "../assets/truck-sales_img/MACK-ANTHEM-2024/8.jpg",
+        "desc": "Mack Anthem - Vista Lateral Piloto"
+      },
+      {
+        "src": "../assets/truck-sales_img/MACK-ANTHEM-2024/9.jpg",
+        "desc": "Mack Anthem - Vista Volante"
+      },
+      {
+        "src": "../assets/truck-sales_img/MACK-ANTHEM-2024/10.jpg",
+        "desc": "Mack Anthem - Vista Sleeper 1"
+      },
+      {
+        "src": "../assets/truck-sales_img/MACK-ANTHEM-2024/11.jpg",
+        "desc": "Mack Anthem - Vista Sleeper 2"
       }
     ],
     "engine": "Mack MP8 13.0L",
@@ -1137,7 +1109,7 @@
       "Frenos ABS",
       "Control de crucero",
       "Espejos elÃ©ctricos",
-      "Asiento del conductor neumÃ¡tico",
+      "Asiento del conductor neumatico",
       "Bloqueo de diferencial",
       "Freno de motor",
       "Luces LED"
@@ -1148,71 +1120,83 @@
     "name": "Hino L6",
     "make": "hino",
     "makeName": "Hino",
-    "condition": "used",
-    "badge": "Usado",
+    "condition": "new excellent",
+    "badge": "Usado Excelente",
     "badgeClass": "badge-primary",
     "year": 2026,
-    "mileage": 12000,
-    "fuel": "DiÃ©sel",
+    "mileage": 1528,
+    "fuel": "Diesel",
     "fuelType": "diesel",
     "fuelIcon": "bi-fuel-pump",
-    "transmission": "AutomÃ¡tico",
+    "transmission": "Automatico",
     "transmissionType": "automatic",
     "type": "daycab",
     "typeName": "Day Cab",
     "color": "Blanco",
     "duty": "medium",
     "dutyName": "Medium Duty",
-    "price": 78000,
+    "price": 128000,
     "imagesPath": "truck-sales_img/Hino-L6-2026",
     "images": [
       {
-        "src": "../assets/truck-sales_img/Hino-L6-2026/2026-hino-l6-day-cab-chassis-1.jfif",
+        "src": "../assets/truck-sales_img/Hino-L6-2026/1.png",
+        "desc": "Hino L6 - Vista Diagonal Frontal Piloto"
+      },
+      {
+        "src": "../assets/truck-sales_img/Hino-L6-2026/2.png",
         "desc": "Hino L6 - Vista Frontal"
       },
       {
-        "src": "../assets/truck-sales_img/Hino-L6-2026/2026-hino-l6-day-cab-chassis-10.jfif",
-        "desc": "Hino L6 - Vista Lateral"
+        "src": "../assets/truck-sales_img/Hino-L6-2026/3.png",
+        "desc": "Hino L6 - Vista Diagonal Frontal Copiloto"
       },
       {
-        "src": "../assets/truck-sales_img/Hino-L6-2026/2026-hino-l6-day-cab-chassis-11.jfif",
+        "src": "../assets/truck-sales_img/Hino-L6-2026/4.png",
+        "desc": "Hino L6 - Vista Lateral Copiloto"
+      },
+      {
+        "src": "../assets/truck-sales_img/Hino-L6-2026/5.png",
+        "desc": "Hino L6 - Vista Lateral Piloto"
+      },
+      {
+        "src": "../assets/truck-sales_img/Hino-L6-2026/6.png",
+        "desc": "Hino L6 - Vista Trasera Diagonal Piloto"
+      },
+      {
+        "src": "../assets/truck-sales_img/Hino-L6-2026/7.png",
         "desc": "Hino L6 - Vista Trasera"
       },
       {
-        "src": "../assets/truck-sales_img/Hino-L6-2026/2026-hino-l6-day-cab-chassis-12.jfif",
-        "desc": "Hino L6 - Vista Cabina"
+        "src": "../assets/truck-sales_img/Hino-L6-2026/8.png",
+        "desc": "Hino L6 - Vista Diagonal Trasera Copiloto"
       },
       {
-        "src": "../assets/truck-sales_img/Hino-L6-2026/2026-hino-l6-day-cab-chassis-2.jfif",
-        "desc": "Hino L6 - Detalle"
+        "src": "../assets/truck-sales_img/Hino-L6-2026/9.png",
+        "desc": "Hino L6 - Vista Trasera Container Abierto"
       },
       {
-        "src": "../assets/truck-sales_img/Hino-L6-2026/2026-hino-l6-day-cab-chassis-3.jfif",
-        "desc": "Hino L6 - Vista General"
+        "src": "../assets/truck-sales_img/Hino-L6-2026/10.png",
+        "desc": "Hino L6 - Vista Trasera Container Abierto Rampa"
       },
       {
-        "src": "../assets/truck-sales_img/Hino-L6-2026/2026-hino-l6-day-cab-chassis-4.jfif",
-        "desc": "Hino L6 - Vista Frontal"
+        "src": "../assets/truck-sales_img/Hino-L6-2026/11.jpg",
+        "desc": "Hino L6 - Vista Interior Container"
       },
       {
-        "src": "../assets/truck-sales_img/Hino-L6-2026/2026-hino-l6-day-cab-chassis-5.jfif",
-        "desc": "Hino L6 - Vista Lateral"
+        "src": "../assets/truck-sales_img/Hino-L6-2026/12.jpg",
+        "desc": "Hino L6 - Vista Cabina Piloto"
       },
       {
-        "src": "../assets/truck-sales_img/Hino-L6-2026/2026-hino-l6-day-cab-chassis-6.jfif",
-        "desc": "Hino L6 - Vista Trasera"
+        "src": "../assets/truck-sales_img/Hino-L6-2026/13.webp",
+        "desc": "Hino L6 - Vista Palanca de Cambios"
       },
       {
-        "src": "../assets/truck-sales_img/Hino-L6-2026/2026-hino-l6-day-cab-chassis-7.jfif",
-        "desc": "Hino L6 - Vista Cabina"
+        "src": "../assets/truck-sales_img/Hino-L6-2026/14.jpg",
+        "desc": "Hino L6 - Vista Tablero"
       },
       {
-        "src": "../assets/truck-sales_img/Hino-L6-2026/2026-hino-l6-day-cab-chassis-8.jfif",
-        "desc": "Hino L6 - Detalle"
-      },
-      {
-        "src": "../assets/truck-sales_img/Hino-L6-2026/2026-hino-l6-day-cab-chassis-9.jfif",
-        "desc": "Hino L6 - Vista General"
+        "src": "../assets/truck-sales_img/Hino-L6-2026/15.jpg",
+        "desc": "Hino L6 - Vista Detalles Carga"
       }
     ],
     "engine": "Cummins B6.7 6.7L",
@@ -1227,8 +1211,8 @@
     "equipment": [
       "Frenos ABS",
       "Control de crucero",
-      "Espejos elÃ©ctricos",
-      "Asiento del conductor neumÃ¡tico",
+      "Espejos electricos",
+      "Asiento del conductor neumatico",
       "Bloqueo de diferencial",
       "Freno de motor",
       "Luces LED",
