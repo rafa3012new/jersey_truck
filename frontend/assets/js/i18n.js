@@ -106,7 +106,7 @@ const I18N_EN = {
   "Nuestras Marcas":
     "Our Brands",
   "Compra, renta y refacciones para mantener tu flota siempre en marcha.":
-    "Sales, rentals and parts to keep your fleet moving.",
+    "Sales, rentals, and spare parts to keep your fleet moving.",
   "Venta": "Sales",
   "Renta": "Rental",
   "Rentas": "Rentals",
