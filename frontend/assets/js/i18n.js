@@ -103,8 +103,8 @@ const I18N_EN = {
   "Nuestro equipo te guía en cada paso para encontrar el camión perfecto para tu operación.":
     "Our team guides you every step of the way to find the perfect truck for your operation.",
   "Nuestros Servicios": "Our Services",
-  "Marcas que representamos y confían en TruckFleet":
-    "Brands we represent and that trust TruckFleet",
+  "Nuestras Marcas":
+    "Our Brands",
   "Compra, renta y refacciones para mantener tu flota siempre en marcha.":
     "Sales, rentals and parts to keep your fleet moving.",
   "Venta": "Sales",
