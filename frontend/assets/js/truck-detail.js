@@ -131,26 +131,47 @@ function renderTruckGallery(truck) {
   }));
 
   const items = images
-    .map(
-      (image, index) => `
-        <div class="truck-carousel-item${index === 0 ? " active" : ""}" data-desc="${escapeHtml(image.desc)}">
-          <img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.desc)}" class="truck-card-img"
-            loading="${index === 0 ? "eager" : "lazy"}" />
-        </div>`
-    )
+    .map((image, index) => {
+      const isVideo =
+        typeof isTruckVideoSrc === "function"
+          ? isTruckVideoSrc(image.src)
+          : /\.(mp4|webm|ogg|mov|m4v)$/i.test(String(image.src)) ||
+            /^v/i.test(String(image.src).split("/").pop().replace(/\.[^.]*$/, ""));
+
+      const media = isVideo
+        ? `<video src="${escapeHtml(image.src)}" class="truck-card-img" aria-label="${escapeHtml(image.desc)}"
+            muted playsinline loop preload="${index === 0 ? "metadata" : "none"}"></video>`
+        : `<img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.desc)}" class="truck-card-img"
+            loading="${index === 0 ? "eager" : "lazy"}" />`;
+
+      return `
+        <div class="truck-carousel-item${index === 0 ? " active" : ""}" data-desc="${escapeHtml(image.desc)}" data-media-type="${isVideo ? "video" : "image"}">
+          ${media}
+        </div>`;
+    })
     .join("");
 
   const thumbs = images
-    .map(
-      (image, index) => `
+    .map((image, index) => {
+      const isVideo =
+        typeof isTruckVideoSrc === "function"
+          ? isTruckVideoSrc(image.src)
+          : /\.(mp4|webm|ogg|mov|m4v)$/i.test(String(image.src)) ||
+            /^v/i.test(String(image.src).split("/").pop().replace(/\.[^.]*$/, ""));
+
+      const thumbMedia = isVideo
+        ? `<video src="${escapeHtml(image.src)}" muted playsinline preload="metadata"></video>`
+        : `<img src="${escapeHtml(image.src)}" alt="" loading="lazy" />`;
+
+      return `
         <button type="button" class="detail-thumb${index === 0 ? " active" : ""}" data-thumb-index="${index}"
           aria-label="${escapeHtml(
             t("Ver imagen {n}: {desc}", { n: index + 1, desc: image.desc })
           )}" aria-pressed="${index === 0}">
-          <img src="${escapeHtml(image.src)}" alt="" loading="lazy" />
+          ${thumbMedia}
           <span class="detail-thumb-number">${index + 1}</span>
-        </button>`
-    )
+        </button>`;
+    })
     .join("");
 
   gallery.innerHTML = `

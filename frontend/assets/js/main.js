@@ -335,6 +335,30 @@ function formatPrice(price) {
 }
 
 /**
+ * Detecta si una ruta de recurso corresponde a un video.
+ *
+ * Convención acordada para el demo: un archivo se considera video si su
+ * extensión es de video (.mp4, .webm, .ogg, .mov, .m4v) o si el nombre del
+ * archivo (sin extensión) empieza por la letra "V" (mayúscula o minúscula,
+ * p. ej. "v1.mp4", "Vwalkaround.mp4", "video1.mp4").
+ *
+ * @param {string} src - Ruta del recurso
+ * @returns {boolean} true si es un video
+ */
+function isTruckVideoSrc(src) {
+  if (!src) return false;
+
+  const clean = String(src).split("?")[0].split("#")[0];
+  if (/\.(mp4|webm|ogg|mov|m4v)$/i.test(clean)) return true;
+
+  const file = clean.split("/").pop() || "";
+  const name = file.replace(/\.[^.]*$/, "");
+  if (/^v/i.test(name)) return true;
+
+  return false;
+}
+
+/**
  * Inicializar carruseles de camiones
  */
 function initTruckCarousels() {
@@ -368,6 +392,21 @@ function initTruckCarousels() {
           item.classList.add("active");
         } else {
           item.classList.remove("active");
+        }
+
+        // Reproduce solo el video del slide activo para no penalizar rendimiento
+        const media = item.querySelector(".truck-card-img");
+        if (media && media.tagName === "VIDEO") {
+          if (index === currentIndex) {
+            media.play().catch(() => {});
+          } else {
+            media.pause();
+            try {
+              media.currentTime = 0;
+            } catch (e) {
+              /* ignore */
+            }
+          }
         }
       });
 
@@ -523,6 +562,7 @@ function initTruckZoomModal() {
       </button>
       <div class="truck-zoom-modal-content">
         <img src="" alt="" class="truck-zoom-modal-img" id="truckZoomImg" draggable="false" />
+        <video id="truckZoomVideo" class="truck-zoom-modal-img" muted controls playsinline preload="metadata" style="display:none;"></video>
         <div class="truck-zoom-modal-desc" id="truckZoomDesc"></div>
         <div class="truck-zoom-modal-counter" id="truckZoomCounter"></div>
         <div class="truck-zoom-modal-hint" id="truckZoomHint"></div>
@@ -579,16 +619,26 @@ function initTruckZoomModal() {
       const carousel = img.closest("[data-carousel]");
       if (!carousel) return;
 
+      // Pausa los videos de la tarjeta al abrir el zoom
+      carousel.querySelectorAll(".truck-card-img").forEach((m) => {
+        if (m.tagName === "VIDEO") m.pause();
+      });
+
       const items = carousel.querySelectorAll(".truck-carousel-item");
       const currentItem = img.closest(".truck-carousel-item");
       const index = Array.from(items).indexOf(currentItem);
 
       const zoomItems = Array.from(items).map((item) => {
-        const itemImg = item.querySelector(".truck-card-img");
+        const itemMedia = item.querySelector(".truck-card-img");
+        const isVideo =
+          itemMedia && itemMedia.tagName === "VIDEO"
+            ? true
+            : isTruckVideoSrc(itemMedia ? itemMedia.src || itemMedia.getAttribute("src") : "");
         return {
-          src: itemImg.src,
-          alt: itemImg.alt,
+          src: itemMedia ? (itemMedia.src || itemMedia.getAttribute("src") || "") : "",
+          alt: itemMedia && itemMedia.tagName !== "VIDEO" ? itemMedia.alt : (itemMedia ? itemMedia.getAttribute("aria-label") || "" : ""),
           desc: item.getAttribute("data-desc") || "",
+          type: isVideo ? "video" : "image",
         };
       });
 
@@ -611,8 +661,22 @@ function closeZoomModal() {
   const modal = document.getElementById("truckZoomModal");
   if (!modal) return;
 
+  const video = document.getElementById("truckZoomVideo");
+  if (video) {
+    video.pause();
+    video.removeAttribute("src");
+    video.style.display = "none";
+  }
+  const img = document.getElementById("truckZoomImg");
+  if (img) img.style.display = "";
+
   modal.classList.remove("active");
   document.body.style.overflow = "auto";
+
+  // Reanuda el video del slide activo (si lo había) al cerrar el zoom
+  document.querySelectorAll(".truck-carousel-item.active .truck-card-img").forEach((m) => {
+    if (m.tagName === "VIDEO") m.play().catch(() => {});
+  });
 }
 
 /**
@@ -644,8 +708,36 @@ function updateZoomModal() {
   const item = zoomModalState.items[zoomModalState.currentIndex];
   if (!item) return;
 
-  img.src = item.src;
-  img.alt = item.alt;
+  const video = document.getElementById("truckZoomVideo");
+
+  // Detiene cualquier video previo antes de cambiar de item
+  if (video) {
+    video.pause();
+  }
+
+  const isVideo = item.type === "video" || isTruckVideoSrc(item.src);
+
+  if (isVideo) {
+    if (img) {
+      img.style.display = "none";
+      img.src = "";
+    }
+    if (video) {
+      video.style.display = "";
+      video.src = item.src;
+      video.play().catch(() => {});
+    }
+  } else {
+    if (video) {
+      video.style.display = "none";
+      video.removeAttribute("src");
+    }
+    if (img) {
+      img.style.display = "";
+      img.src = item.src;
+      img.alt = item.alt;
+    }
+  }
 
   if (desc) desc.textContent = item.desc || "";
   if (counter) {
@@ -659,11 +751,11 @@ function updateZoomModal() {
   }
   const hintEl = document.getElementById("truckZoomHint");
   if (hintEl) {
-    hintEl.style.display = zoomModalState.simpleMode ? "none" : "";
+    hintEl.style.display = zoomModalState.simpleMode || isVideo ? "none" : "";
   }
   const zoomImg = document.getElementById("truckZoomImg");
   if (zoomImg) {
-    zoomImg.style.cursor = zoomModalState.simpleMode ? "default" : "";
+    zoomImg.style.cursor = zoomModalState.simpleMode || isVideo ? "default" : "";
   }
 
   // Reinicia la transición al cambiar de imagen

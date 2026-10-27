@@ -1804,7 +1804,8 @@ img {
   transition: var(--transition-base);
 }
 
-.detail-thumb img {
+.detail-thumb img,
+.detail-thumb video {
   display: block;
   width: 100%;
   height: 100%;

@@ -325,11 +325,21 @@ function buildTruckCard(truck, columnClass = "col-md-6") {
   const images = truck.images
     .map((image, index) => {
       const imageDesc = localizeImageDesc(image.desc);
+      const isVideo =
+        typeof isTruckVideoSrc === "function"
+          ? isTruckVideoSrc(image.src)
+          : /\\.(mp4|webm|ogg|mov|m4v)$/i.test(String(image.src)) ||
+            /^v/i.test(String(image.src).split("/").pop().replace(/\\.[^.]*$/, ""));
+
+      const media = isVideo
+        ? `<video src="${escapeHtml(image.src)}" class="truck-card-img" aria-label="${escapeHtml(imageDesc)}"
+            muted playsinline loop preload="none"></video>`
+        : `<img src="${escapeHtml(image.src)}" alt="${escapeHtml(imageDesc)}" class="truck-card-img"
+            loading="lazy" />`;
 
       return `
-              <div class="truck-carousel-item${index === 0 ? " active" : ""}" data-desc="${escapeHtml(imageDesc)}">
-                <img src="${escapeHtml(image.src)}" alt="${escapeHtml(imageDesc)}" class="truck-card-img"
-                  loading="lazy" />
+              <div class="truck-carousel-item${index === 0 ? " active" : ""}" data-desc="${escapeHtml(imageDesc)}" data-media-type="${isVideo ? "video" : "image"}">
+                ${media}
               </div>`;
     })
     .join("");
