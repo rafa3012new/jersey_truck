@@ -305,6 +305,7 @@ const I18N_EN = {
   "Sin imagen disponible": "No image available",
   "Clic en la foto para ampliar": "Click the photo to enlarge",
   "Ver imagen {n}: {desc}": "View image {n}: {desc}",
+  "Video": "Video",
   "Precio de venta · Unidad #{stock}": "Sale price · Unit #{stock}",
   "Solicitar información": "Request information",
   "Financiamiento disponible sujeto a aprobación.":

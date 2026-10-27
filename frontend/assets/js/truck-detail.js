@@ -169,6 +169,11 @@ function renderTruckGallery(truck) {
             t("Ver imagen {n}: {desc}", { n: index + 1, desc: image.desc })
           )}" aria-pressed="${index === 0}">
           ${thumbMedia}
+          ${
+            isVideo
+              ? `<span class="detail-thumb-video-badge">${escapeHtml(t("Video"))}</span>`
+              : ""
+          }
           <span class="detail-thumb-number">${index + 1}</span>
         </button>`;
     })
